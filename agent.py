@@ -182,7 +182,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-f "history" not in st.session_state:
+if "history" not in st.session_state:
     st.session_state.history = []
 if "current" not in st.session_state:
     st.session_state.current = []
@@ -198,4 +198,5 @@ with st.sidebar:
     for i, chat in enumerate(st.session_state.history):
         if st.button(f"Chat {i+1}", key=f"chat_{i}"):
             st.session_state.current = chat.copy()
+
 
