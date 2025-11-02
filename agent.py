@@ -187,16 +187,17 @@ if "history" not in st.session_state:
 if "current" not in st.session_state:
     st.session_state.current = []
 
-# --- Sidebar ---
+
 with st.sidebar:
     if st.button(" New Chat"):
         if st.session_state.current:
             st.session_state.history.append(st.session_state.current.copy())
         st.session_state.current = []
 
-    st.subheader("Chat History")
-    for i, chat in enumerate(st.session_state.history):
-        if st.button(f"Chat {i+1}", key=f"chat_{i}"):
-            st.session_state.current = chat.copy()
+    st.subheader(" Chat History")
+    if st.session_state.history:
+        for i, chat in enumerate(st.session_state.history, start=1):
+            st.write(f"Chat {i} ({len(chat)} messages)")
+
 
 
