@@ -148,7 +148,7 @@ def mini_agent(client,model,question,max_iter=3):
     transcript.append(f"Action Input:{action_input}")
     transcript.append(f"Obsevation:{observation}")
 
-    summary=client.chat.completions.create(model=model,messages=[{"role":"system","content":"summarize briefly in english."},{"role":"user","content":"\n".join(transcript)},],
+    summary=client.chat.completions.create(model="qwen/qwen3-32b","llama-3.1-8b-instant","openai/gpt-oss-20b",messages=[{"role":"system","content":"summarize briefly in english."},{"role":"user","content":"\n".join(transcript)},],
                                            temperature=0.2,
                                            max_tokens=342,)
     return summary.choices[0].message.content
@@ -181,6 +181,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 
 
