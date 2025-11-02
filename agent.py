@@ -182,22 +182,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-if "history" not in st.session_state:
-    st.session_state.history = []
-if "current" not in st.session_state:
-    st.session_state.current = []
 
-
-with st.sidebar:
-    if st.button(" New Chat"):
-        if st.session_state.current:
-            st.session_state.history.append(st.session_state.current.copy())
-        st.session_state.current = []
-
-    st.subheader(" Chat History")
-    if st.session_state.history:
-        for i, chat in enumerate(st.session_state.history, start=1):
-            st.write(f"Chat {i} ({len(chat)} messages)")
 
 
 
