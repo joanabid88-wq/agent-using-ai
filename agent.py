@@ -171,7 +171,7 @@ st.markdown(
     .footer {
         position: fixed;
        bottom: 10px;
-        right: 10px;
+        left: 10px;
         font-size: 12px;
         color: gray;
         z-index: 9999;
@@ -181,6 +181,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 
 
