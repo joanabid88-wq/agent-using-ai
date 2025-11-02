@@ -171,16 +171,17 @@ st.markdown(
     .footer {
         position: fixed;
        bottom: 10px;
-        center: 14px;
+        center: 10px;
         font-size: 12px;
         color: gray;
-        z-index: 9999;
+        z-index: 99999;
     }
     </style>
     <div class="footer">Created by Joan Abid</div>
     """,
     unsafe_allow_html=True
 )
+
 
 
 
