@@ -114,7 +114,7 @@ def mini_agent(client,model,question,max_iter=3):
     {"role":'user',"content": convo}
     ],
     temperature=0.2,
-    max_tokens=9100)
+    max_tokens=896)
 
     text=resp.choices[0].message.content or""
     with st.expander(f"Step{step}",expanded=False):
@@ -181,6 +181,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 
 
