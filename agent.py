@@ -180,11 +180,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-st.sidebar.subheader("🧩 Data Sources")
-use_wiki = st.sidebar.checkbox("Wikipedia", True)
-use_duck = st.sidebar.checkbox("DuckDuckGo", True)
-use_youtube = st.sidebar.checkbox("YouTube Search", False)
-use_arxiv = st.sidebar.checkbox("Arxiv", False)
+
 
 
 
