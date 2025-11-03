@@ -158,7 +158,7 @@ if query:
     st.chat_message("user").write(query)
 
 if not api_key:
-    st.error("Please enter valid API KEY in sidebar or .env")
+    st.warning("Please enter valid API KEY in sidebar or .env")
 else:
     client=Groq(api_key=api_key)
     with st.spinner("Thinking...."):
@@ -181,6 +181,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 
 
