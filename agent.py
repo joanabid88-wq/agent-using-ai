@@ -152,7 +152,7 @@ def mini_agent(client,model,question,max_iter=3):
                                            max_tokens=342,)
     return summary.choices[0].message.content
      
-     st.sidebar.subheader("Answer Length")
+st.sidebar.subheader("Answer Length")
 answer_length = st.sidebar.radio(
     "How long should the answer be?",
     ["Short", "Medium", "Detailed"],
@@ -195,6 +195,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 
 
