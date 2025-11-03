@@ -151,20 +151,6 @@ def mini_agent(client,model,question,max_iter=3):
                                            temperature=0.2,
                                            max_tokens=342,)
     return summary.choices[0].message.content
-     
-st.sidebar.subheader("Answer Length")
-answer_length = st.sidebar.radio(
-    "How long should the answer be?",
-    ["Short", "Medium", "Detailed"],
-    index=1
-)
-length_instruction = {
-    "Short": "Give a short and concise answer (1-2 sentences).",
-    "Medium": "Give a balanced answer with some detail (3-5 sentences).",
-    "Detailed": "Give a detailed and thorough answer explaining everything clearly."
-}[answer_length]
-max_tokens = st.sidebar.slider("🪶 Maximum Answer Length (tokens)", 100, 2000, 500)
-
 
 
 query=st.chat_input("Ask me a Question and and I will Answer it." )
@@ -195,6 +181,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 
 
