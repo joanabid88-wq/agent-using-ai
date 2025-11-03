@@ -28,8 +28,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.sidebar.header('Setting')
-
-api_key= st.sidebar.text_input("GROQ Api Key \n (Optional)",type="password") or os.getenv("api_key","")
+api_key=os.getenv("api_key","")
 
 model_name=st.sidebar.selectbox("Model",["qwen/qwen3-32b","llama-3.1-8b-instant","openai/gpt-oss-20b"],index=0)
 max_steps=st.sidebar.slider("Max Resoning steps",1,6,3)
@@ -181,6 +180,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 
 
