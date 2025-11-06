@@ -30,6 +30,12 @@ st.markdown("""
 st.sidebar.header('Setting')
 api_key=os.getenv("api_key","")
 
+if not api_key:
+    st.error("❌ Missing GROQ_API_KEY. Please check your .env or Streamlit secrets.")
+else:
+    client = Groq(api_key=api_key)
+    st.success("✅ Groq API key loaded successfully!")
+
 model_name=st.sidebar.selectbox("Model",["qwen/qwen3-32b","llama-3.1-8b-instant","openai/gpt-oss-20b"],index=0)
 max_steps=st.sidebar.slider("Max Resoning steps",1,6,3)
 
@@ -181,6 +187,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
 
 
